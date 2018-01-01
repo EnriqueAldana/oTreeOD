@@ -1,4 +1,36 @@
 # oTree
+Instruction to run the oTree implementation.
+
+1.- Download to local repository
+
+running with local data base.
+
+3.- make sure that folder where you are (oTreeOpenDigital name folder) contain setting.py and open a terminal
+4.- input otree resetdb command and click enter. With this command the framework will reset a database creating all tables required.
+5.- input otree runserver command to strat up the web server .
+6.- Go to http://127.0.0.1:8000/
+
+
+running with postgres database on local machine.
+
+3.- Installing the postgres database according this web page under MAC https://www.postgresql.org/download/macosx/
+4.- Installing the postgres python driver name  with pip tool. input on terminal this command pip install psycopg2 and click enter.
+5.- Installing postgres database tool. go to https://www.pgadmin.org/download/pgadmin-4-macos/ and install the postures tool.
+6.- Login to postres database and create a schema like otree_open_digital name
+7.- under terminal console input:
+export DATABASE_URL=postgres://postgres:postgres@localhost:5432/otree_open_digital   and click enter key
+export OTREE_AUTH_LEVEL=STUDY  and click enter key
+export OTREE_ADMIN_PASSWORD=admin and click enter key
+export OTREE_PRODUCTION=0 and click enter key
+otree resetdb and click enter key
+Note.- This command are environment variables and living on the console session, if you close it this variables was lost
+
+8.- input otree runserver and click enter key
+9.-  Go to http://localhost:8000
+
+
+Note.- For each that you create a new app on it , you will should apply reset database with otree rested command. In this case the last data that you have been entered will be lost. If you want keep the database data you will use a migration strategy to maintain database data.the migration strategy consist in create a sql command to create just the tables according your new app ( models classes).
+
 
 oTree is a framework based on Python and Django that lets you build:
 
