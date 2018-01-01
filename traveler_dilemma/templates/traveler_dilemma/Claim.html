@@ -1,0 +1,21 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+<img src="{% static "global/images/OpenDigitalBanner.png" %}"/>
+<img src="{% static "global/images/OpenDigitalHL.png" %}"/>
+<br>
+   Claim
+<br>
+<img src="{% static "global/images/OpenDigitalHL.png" %}"/>
+{% endblock %}
+
+
+{% block content %}
+
+    {% formfield player.claim label='How much will you claim for your antique?' %}
+    {% next_button %}
+    
+    {% include Constants.instructions_template %}
+
+{% endblock %}

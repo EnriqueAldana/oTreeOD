@@ -1,0 +1,26 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+
+{% block title %}
+<img src="{% static "global/images/OpenDigitalBanner.png" %}"/>
+<img src="{% static "global/images/OpenDigitalHL.png" %}"/>
+<br>
+   Production
+<br>
+<img src="{% static "global/images/OpenDigitalHL.png" %}"/>
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        The other firm produced {{  player.other_player.quantity }} units. How many units will you produce?
+    </p>
+
+    {% formfield player.quantity label='Number of units:' %}
+
+    {% next_button %}
+
+    {% include Constants.instructions_template %}
+
+{% endblock %}

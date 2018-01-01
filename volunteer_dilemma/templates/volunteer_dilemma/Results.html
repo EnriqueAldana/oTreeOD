@@ -1,0 +1,31 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+{% load otree staticfiles %}
+
+{% block title %}
+<img src="{% static "global/images/OpenDigitalBanner.png" %}"/>
+<img src="{% static "global/images/OpenDigitalHL.png" %}"/>
+<br>
+      Results
+<br>
+<img src="{% static "global/images/OpenDigitalHL.png" %}"/>
+{% endblock %}
+{% block content %}
+    <p>
+        {% if player.volunteer %}
+            You volunteered. As a result, your payoff is
+            <strong>{{ player.payoff }}</strong>.
+        {% elif num_volunteers > 0 %}
+            You did not volunteer but some did. As a result, your payoff is
+            <strong>{{ player.payoff }}</strong>.
+        {% else %}
+            You did not volunteer and no one did. As a result, your payoff is
+            <strong>{{ player.payoff }}</strong>.
+        {% endif %}
+    </p>
+
+    <p>{% next_button %}</p>
+
+    {% include Constants.instructions_template %}
+
+{% endblock %}

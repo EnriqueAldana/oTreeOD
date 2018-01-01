@@ -1,0 +1,60 @@
+{% extends "otree/Page.html" %}
+{% load staticfiles otree %}
+{% load otree %}
+
+
+{% block global_styles  %}
+<style>
+    .otree-body {
+        max-width:800px
+    }
+    .otree-title {
+    text-align: center;
+    color: #E3AD45;
+    }
+    .otree-btn-next{
+    background-color: #E3AD45;
+    border: none;
+    color: #E3AD45;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    }
+    .control-label{
+    color: #E3AD45;
+    font-size: 14px;
+    }
+
+</style>
+{% endblock %}
+
+{% block global_scripts  %}
+
+{% endblock %}
+
+{% block title %}
+<img src="{% static "global/images/OpenDigitalBanner.png" %}"/>
+<img src="{% static "global/images/OpenDigitalHL.png" %}"/>
+<br>
+    coBeXt - Controlled behavioral experiments tool
+<br>
+<img src="{% static "global/images/OpenDigitalHL.png" %}"/>
+
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        It is a test to include a block content
+    </p>
+
+    <p>
+       The seccond paragraph
+    </p>
+<div class="alert alert-success">It is a -template/global/page.html!</div>
+
+{% endblock %}

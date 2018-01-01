@@ -1,0 +1,32 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% load staticfiles otree %}
+
+{% block title %}
+<img src="{% static "global/images/OpenDigitalBanner.png" %}"/>
+<img src="{% static "global/images/OpenDigitalHL.png" %}"/>
+<br>
+  Purchase (Period {{ subsession.round_number }} of {{ Constants.num_rounds }})
+<br>
+<img src="{% static "global/images/OpenDigitalHL.png" %}"/>
+{% endblock %}
+
+{% block content %}
+<p>You are buyer.</p>
+<p>
+    <strong>Below are the listed prices from the sellers:</strong><br/>
+    {% for p in group.get_players %}
+    {% if 'seller' in p.role %}
+    <i>Price from {{p.role}}: {{p.seller_proposed_price}}</i><br/>
+    {% endif %}
+    {% endfor %}
+</p>
+
+{% formfield group.seller_id label="Please make a purchase decision:" %}
+
+{% next_button %}
+
+{% include Constants.instructions_template %}
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+{% load staticfiles otree %}
+
+
+{% block title %}
+<img src="{% static "global/images/OpenDigitalBanner.png" %}"/>
+<img src="{% static "global/images/OpenDigitalHL.png" %}"/>
+<br>
+  Results for all rounds
+<br>
+<img src="{% static "global/images/OpenDigitalHL.png" %}"/>
+{% endblock %}
+
+{% block content %}
+    <p>
+        You have finished all {{ Constants.num_rounds }} periods. Purchases for
+        all periods are
+        summarized below:
+    </p>
+
+    {% include 'lemon_market/HighChart.html' %}
+
+    <p>
+        You are <strong>{{ player.role }}</strong>.
+    </p>
+
+    {% next_button %}
+
+{% endblock %}

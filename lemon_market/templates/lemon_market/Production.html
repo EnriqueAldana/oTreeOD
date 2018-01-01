@@ -1,0 +1,26 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+
+{% load staticfiles otree %}
+
+{% block title %}
+<img src="{% static "global/images/OpenDigitalBanner.png" %}"/>
+<img src="{% static "global/images/OpenDigitalHL.png" %}"/>
+<br>
+  Production (Period {{ subsession.round_number }} of {{ Constants.num_rounds }})
+<br>
+<img src="{% static "global/images/OpenDigitalHL.png" %}"/>
+{% endblock %}
+
+{% block content %}
+
+    <p>You are {{ player.role }}</p>
+
+    {% formfield player.seller_proposed_quality label='What quality grade do you want to produce?' %}
+    {% formfield player.seller_proposed_price label='What price do you want to sell at?' %}
+
+    {% next_button %}
+    {% include Constants.instructions_template %}
+
+{% endblock %}

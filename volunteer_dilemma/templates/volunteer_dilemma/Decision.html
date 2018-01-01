@@ -1,0 +1,22 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+{% load otree staticfiles %}
+
+{% block title %}
+<img src="{% static "global/images/OpenDigitalBanner.png" %}"/>
+<img src="{% static "global/images/OpenDigitalHL.png" %}"/>
+<br>
+      Your Choice
+<br>
+<img src="{% static "global/images/OpenDigitalHL.png" %}"/>
+{% endblock %}
+
+{% block content %}
+
+    {% formfield player.volunteer label='Do you wish to volunteer?' %}
+ <p>  {% next_button %}</p> 
+
+    {% include Constants.instructions_template %}
+
+{% endblock %}
+

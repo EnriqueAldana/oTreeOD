@@ -1,0 +1,26 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+
+{% block title %}
+<img src="{% static "global/images/OpenDigitalBanner.png" %}"/>
+<img src="{% static "global/images/OpenDigitalHL.png" %}"/>
+<br>
+   Work effort
+<br>
+<img src="{% static "global/images/OpenDigitalHL.png" %}"/>
+{% endblock %}
+
+
+{% block content %}
+
+    <p>
+        You accepted the contract. Please choose your effort level.
+    </p>
+
+    {% formfield player.agent_work_effort label='Effort level' %}
+    {% next_button %}
+
+    {% include Constants.instructions_template %}
+
+{% endblock %}
